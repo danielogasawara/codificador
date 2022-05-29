@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificador</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div id="site">
+        <header>
+            <a href="index.html">
+                <img src="assets/images/logo.svg" alt="Logo do site.">
+            </a>
+        </header>
+        <main>
+            <section id="entrada-de-dados">
+                <div id="box-campo-de-texto">
+                    <textarea name="texto" id="campo-de-texto" placeholder="Digite seu texto" oninput="AumentaCaixaTexto(this)"></textarea>
+                </div>
+                <span id="aviso-formatacao">
+                    <img src="assets/images/alert.svg" alt="Sinal de Alerta.">
+                    Apenas letras minúsculas e sem acento.
+                </span>
+                <div id="botoes-de-acao">
+                    <button id="criptografar" onclick="CriptografaTexto()">Criptografar</button>
+                    <button id="descriptografar" onclick="DescriptografaTexto()">Descriptografar</button>
+                </div>
+            </section>
+            <section id="resultado">
+                <div id="sem-resultado">
+                    <img src="assets/images/img.svg" alt="">
+                    <h1>Nenhuma mensagem encontrada</h1>
+                    <h2>Digite um texto que você deseja criptografar ou descriptografar.</h2>
+                </div>
+                <div id="com-resultado">
+                    <span id="texto-processado"></span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

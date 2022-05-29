@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --fonte-padrao: 'Inter', sans-serif;
+    --cor-Azul-Escuro-500: #052051;
+    --cor-Azul-Escuro-400: #072B61;
+    --cor-Azul-Escuro-300: #0A3871;
+    --cor-Azul-Escuro-200: #356EA9;
+    --cor-Azul-Escuro-100: #609ED4;
+    --cor-Azul-Claro-500: #757FB2;
+    --cor-Azul-Claro-400: #AAB2D5;
+    --cor-Azul-Claro-300: #E9ECF8;
+    --cor-Azul-Claro-200: #EFF1FA;
+    --cor-Azul-Claro-100: #F3F5FC;
+    --cor-Cinza-500: #343A40;
+    --cor-Cinza-400: #495057;
+    --cor-Cinza-300: #868E96;
+    --cor-Cinza-200: #ADB5BD;
+    --cor-Cinza-100: #CED4DA;
+}
+body {
+    background-color: var(--cor-Azul-Claro-100);
+    font-family: var(--fonte-padrao);
+}
+/* Corpo da Página */
+#site {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 16px 24px;
+    min-height: 100vh;
+}
+/* Cabeçario */
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+header :is(a, img) {
+    height: 48px;
+}
+/* Conteúdo Principal */
+main {
+    display: flex;
+    flex-direction: column;
+}  
+
+/* Campo de texto */
+#campo-de-texto {
+    width: 100%;
+    min-height: 250px;
+    border: none;
+    resize: none;
+    overflow: hidden;
+    background-color: transparent;
+    font: 500 32px var(--fonte-padrao);
+    color: var(--cor-Azul-Escuro-300);
+}
+#campo-de-texto::placeholder {
+    color: var(--cor-Azul-Escuro-300);
+    opacity: 1;
+}
+#campo-de-texto:focus {
+    outline: none;
+}
+
+/* Aviso da Formatação */
+#aviso-formatacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--cor-Cinza-500);
+    user-select: none;
+}
+
+/* Botões de Ação */
+#botoes-de-acao {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 16px;
+}
+#botoes-de-acao button {
+    height: 65px;
+    border: 2px solid var(--cor-Azul-Escuro-300);
+    border-radius: 25px;
+    cursor: pointer;
+    font: 300 16px var(--fonte-padrao);
+}
+#criptografar {
+    background-color: var(--cor-Azul-Escuro-300);
+    color: var(--cor-Azul-Claro-100);
+}
+#criptografar:hover {
+    background-color: var(--cor-Azul-Escuro-200);
+    border-color: var(--cor-Azul-Escuro-200);
+}
+#descriptografar {
+    background-color: var(--cor-Azul-Claro-100);
+    color: var(--cor-Azul-Escuro-300);
+}
+#descriptografar:hover {
+    background-color: var(--cor-Azul-Claro-300);
+}
+
+/* Resultado */
+#resultado {
+    width: 100%;
+    padding: 32px;
+    margin-top: 65px;
+    border-radius: 32px;
+    background-color: #fff;
+    box-shadow: 0px 16px 32px 0px rgb(0 0 0 / 8%);;
+}
+#sem-resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    text-align: center;
+}
+#sem-resultado img {
+    display: none;
+}
+#sem-resultado h1 {
+    font: bold 24px var(--fonte-padrao);
+    color: var(--cor-Cinza-500);
+}
+#sem-resultado h2 {
+    font: normal 16px var(--fonte-padrao);
+    color: var(--cor-Cinza-500);
+}
+#com-resultado {
+    display: none;
+}
+/* Visual para Celular */
+@media (min-width: 600px) {
+    #botoes-de-acao {
+        flex-direction: row;
+        justify-content: center;
+    }
+    #botoes-de-acao button {
+        width: 100%;
+    }
+}
+/* Visual para Tablet */
+@media (min-width: 768px) {
+    #campo-de-texto {
+        min-height: 500px;
+    }
+}
+/* Visual para PC */
+@media (min-width: 1024px) {
+    header {
+        margin: 2% 0 0 2%;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 80px;
+        margin: 0 10%;
+    }
+    #entrada-de-dados {
+        grid-row: 1/4;
+        grid-column: 1;
+    }
+    #resultado {
+        grid-row: 1/4;
+        grid-column: 2;
+        margin-top: 0;
+    }
+    #sem-resultado img {
+        display: block;
+        width: 80%;
+    }
+}
+@media (min-width: 2560px) {
+    #site {
+        display: flex;
+        flex-direction: column;
+    }
+    #sem-resultado h1 {
+        font: bold 36px var(--fonte-padrao);
+        color: var(--cor-Cinza-500);
+    }
+    #sem-resultado h2 {
+        font: normal 24px var(--fonte-padrao);
+        color: var(--cor-Cinza-500);
+    }
+}
