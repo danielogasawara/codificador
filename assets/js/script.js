@@ -1,22 +1,22 @@
-let sem_resultado = document.querySelector("#sem-resultado");
-let com_resultado = document.querySelector("#com-resultado");
-let texto_processado = document.querySelector("#texto-processado");
+const sem_resultado = document.querySelector("#sem-resultado");
+const com_resultado = document.querySelector("#com-resultado");
+const texto_processado = document.querySelector("#texto-processado");
 // Ativa e desativa a camada de resultado
-function MostraResultado() {
+function mostraResultado() {
     sem_resultado.style.display = "none";
     com_resultado.style.display = "flex";
+    com_resultado.style.flexDirection = "column";
+    com_resultado.style.gap = "32px";
 }
-function EscondeResultado() {
+function escondeResultado() {
     sem_resultado.style.display = "flex";
     com_resultado.style.display = "none";
 }
-
-function AumentaCaixaTexto (caixa_texto) {
+function aumentaCaixaTexto (caixa_texto) {
     caixa_texto.style.height = "100px";
     caixa_texto.style.height = caixa_texto.scrollHeight + "px";
 }
-
-function VerificaCaracteres(texto) {
+function verificaCaracteres(texto) {
     let caractere;
     for (let i = 0; i < texto.length; i++) {
         caractere = texto.charAt(i);
@@ -30,13 +30,11 @@ function VerificaCaracteres(texto) {
 
     return false;
 }
-
-
-function CriptografaTexto() {
+function criptografaTexto() {
     let texto = document.querySelector("#campo-de-texto").value;
     if (texto != "") {
-        if (VerificaCaracteres(texto) === false) {
-            MostraResultado();
+        if (verificaCaracteres(texto) === false) {
+            mostraResultado();
             let resultado = "";
             for (let i = 0; i < texto.length; i++) {
                 caractere = texto.charAt(i);
@@ -61,33 +59,34 @@ function CriptografaTexto() {
                         break;
                 }
             }
-            document.querySelector("#texto-processado").innerText = resultado;
+            texto_processado.innerText = resultado;
         }
         else {
-            EscondeResultado();
+            escondeResultado();
         }  
     }
     else {
-        EscondeResultado();
+        escondeResultado();
         document.querySelector("h1").innerText = "Nenhuma mensagem encontrada";
         document.querySelector("h2").innerText = "Digite um texto que você deseja criptografar ou descriptografar.";
     }
 }
-
-function DescriptografaTexto() {
+function descriptografaTexto() {
     let texto = document.querySelector("#campo-de-texto").value;
     if (texto != "") {
-        if (VerificaCaracteres(texto) === false) {
-            MostraResultado();
-            let resultado = "";
-            switch (texto) {
-                case texto.match(/ai/g):
-                    console.log("Indentifiado!");
-                    break;
-                default:
-                    break;
+        if (verificaCaracteres(texto) === false) {
+            mostraResultado();
+            let resultado = texto;
+            if (resultado.match(/ai/g) || resultado.match(/enter/g) || resultado.match(/imes/g) || resultado.match(/ober/g) || resultado.match(/ufat/g)) {
+                resultado = resultado.replace(/ai/g, "a");
+                resultado = resultado.replace(/enter/g, "e");
+                resultado = resultado.replace(/imes/g, "i");
+                resultado = resultado.replace(/ober/g, "o");
+                resultado = resultado.replace(/ufat/g, "u")
             }
-            
+            texto_processado.innerText = resultado;
         }
     }
+}
+function copiaTexto() {
 }

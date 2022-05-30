@@ -21,15 +21,15 @@
         <main>
             <section id="entrada-de-dados">
                 <div id="box-campo-de-texto">
-                    <textarea name="texto" id="campo-de-texto" placeholder="Digite seu texto" oninput="AumentaCaixaTexto(this)"></textarea>
+                    <textarea name="texto" id="campo-de-texto" placeholder="Digite seu texto" oninput="aumentaCaixaTexto(this)"></textarea>
                 </div>
                 <span id="aviso-formatacao">
                     <img src="assets/images/alert.svg" alt="Sinal de Alerta.">
                     Apenas letras minúsculas e sem acento.
                 </span>
                 <div id="botoes-de-acao">
-                    <button id="criptografar" onclick="CriptografaTexto()">Criptografar</button>
-                    <button id="descriptografar" onclick="DescriptografaTexto()">Descriptografar</button>
+                    <button id="criptografar" onclick="criptografaTexto()">Criptografar</button>
+                    <button id="descriptografar" onclick="descriptografaTexto()">Descriptografar</button>
                 </div>
             </section>
             <section id="resultado">
@@ -40,6 +40,7 @@
                 </div>
                 <div id="com-resultado">
                     <span id="texto-processado"></span>
+                    <button id="copiar-texto" onclick="">Copiar</button>
                 </div>
             </section>
         </main>

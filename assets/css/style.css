@@ -26,6 +26,7 @@
 body {
     background-color: var(--cor-Azul-Claro-100);
     font-family: var(--fonte-padrao);
+    overflow-x: hidden;
 }
 /* Corpo da Página */
 #site {
@@ -51,9 +52,12 @@ main {
 }  
 
 /* Campo de texto */
+#box-campo-de-texto {
+    min-height: 250px;
+}
 #campo-de-texto {
     width: 100%;
-    min-height: 250px;
+    height: 100%;
     border: none;
     resize: none;
     overflow: hidden;
@@ -140,6 +144,19 @@ main {
 }
 #com-resultado {
     display: none;
+    font: normal 24px var(--fonte-padrao);
+}
+#copiar-texto {
+    height: 65px;
+    border: 2px solid var(--cor-Azul-Escuro-300);
+    border-radius: 25px;
+    background-color: transparent;
+    cursor: pointer;
+    font: 400 16px var(--fonte-padrao);
+    color: var(--cor-Azul-Escuro-500);
+}
+#copiar-texto:hover {
+    background-color: var(--cor-Azul-Claro-300);
 }
 /* Visual para Celular */
 @media (min-width: 600px) {
@@ -153,8 +170,8 @@ main {
 }
 /* Visual para Tablet */
 @media (min-width: 768px) {
-    #campo-de-texto {
-        min-height: 500px;
+    #box-campo-de-texto {
+        min-height: 350px;
     }
 }
 /* Visual para PC */
