@@ -75,7 +75,7 @@ main {
     outline: none;
 }
 
-/* Aviso da Formatação */
+/* Aviso instruindo o que deve e não deve conter no campo de texto */
 #aviso-formatacao {
     display: flex;
     align-items: center;
@@ -166,6 +166,7 @@ main {
 #copiar-texto:hover {
     background-color: var(--cor-Azul-Claro-300);
 }
+
 /* Visual para Celular */
 @media (min-width: 600px) {
     #botoes-de-acao {
@@ -176,12 +177,14 @@ main {
         width: 100%;
     }
 }
+
 /* Visual para Tablet */
 @media (min-width: 768px) {
     #box-campo-de-texto {
         min-height: 350px;
     }
 }
+
 /* Visual para PC */
 @media (min-width: 1024px) {
     header {
