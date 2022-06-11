@@ -1,6 +1,8 @@
 const sem_resultado = document.querySelector("#sem-resultado");
 const com_resultado = document.querySelector("#com-resultado");
-const texto_processado = document.querySelector("#texto-processado");
+var texto_processado = document.querySelector("#texto-processado");
+// Apaga o que existe no campo de texto
+document.querySelector("#campo-de-texto").value = "";
 // Ativa e desativa a camada de resultado
 function mostraResultado() {
     sem_resultado.style.display = "none";
@@ -84,9 +86,11 @@ function descriptografaTexto() {
                 resultado = resultado.replace(/ober/g, "o");
                 resultado = resultado.replace(/ufat/g, "u")
             }
-            texto_processado.innerText = resultado;
+            texto_processado.value = resultado;
         }
     }
 }
 function copiaTexto() {
+    navigator.clipboard.writeText(texto_processado.innerText);
+    alert("Texto copiado!");
 }

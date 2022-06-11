@@ -53,14 +53,16 @@ main {
 
 /* Campo de texto */
 #box-campo-de-texto {
-    min-height: 250px;
+    min-height: 100%;
 }
 #campo-de-texto {
     width: 100%;
+    min-height: 100%;
     height: 100%;
     border: none;
     resize: none;
     overflow: hidden;
+    margin-bottom: 1rem;
     background-color: transparent;
     font: 500 32px var(--fonte-padrao);
     color: var(--cor-Azul-Escuro-300);
@@ -144,7 +146,13 @@ main {
 }
 #com-resultado {
     display: none;
+    height: 100%;
     font: normal 24px var(--fonte-padrao);
+}
+#texto-processado {
+    display: block;
+    height: 100%;
+    word-break: break-word;
 }
 #copiar-texto {
     height: 65px;
