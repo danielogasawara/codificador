@@ -1,6 +1,6 @@
 const sem_resultado = document.querySelector("#sem-resultado");
 const com_resultado = document.querySelector("#com-resultado");
-var texto_processado = document.querySelector("#texto-processado");
+const texto_processado = document.querySelector("#texto-processado");
 // Apaga o que existe no campo de texto
 document.querySelector("#campo-de-texto").value = "";
 // Ativa e desativa a camada de resultado
@@ -86,7 +86,7 @@ function descriptografaTexto() {
                 resultado = resultado.replace(/ober/g, "o");
                 resultado = resultado.replace(/ufat/g, "u")
             }
-            texto_processado.value = resultado;
+            texto_processado.innerText = resultado;
         }
     }
 }
